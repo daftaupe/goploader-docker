@@ -1,0 +1,7 @@
+#!/bin/sh
+
+GOPLOADER_DOMAIN=${GOPLOADER_DOMAIN:-"goploader"}
+
+sed -i "s/name_server: goploader/name_server: $GOPLOADER_DOMAIN/" /home/goploader/conf/conf.yml
+
+/home/goploader/goploader-server/server-standalone --conf=/home/goploader/conf/conf.yml
